@@ -1,0 +1,72 @@
+body {
+  background-color: #333;
+  color: #FFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", "Times New Roman";
+  font-size: 16px;
+}
+
+.homepage_h1 {
+  text-align: center;
+}
+
+.homepage_header-small {
+  font-style: italic;
+}
+
+.homepage_project-block {
+  background-color: white;
+  border-radius: 3px;
+  padding: 1em;
+  margin: 0.25em;
+  max-width: 96%;
+}
+
+.homepage_project-block-link {
+  text-align: center;
+}
+
+.project-block-image {
+  max-width: 13em;
+  display: block;
+  margin: 0 auto;
+}
+
+.project-block-babel {
+  background-color: #F5DA55;
+}
+
+.project-block-handlebars {
+  background-color: #f7931e;
+}
+
+.project-block-marionette {
+  background-color: #EDF3F6;
+}
+
+@media(max-width: 768px) {
+  .row {
+    margin: 0 auto;
+  }
+}
+
+@media(min-width: 768px) {
+  .homepage_project-block {
+    max-width: 48.5%;
+  }
+}
+
+@media(min-width: 992px) {
+  .homepage_project-block {
+    margin: 0 0.25em;
+    max-width: 24%;
+  }
+  .project-block-image {
+    max-width: 13em;
+  }
+}
+
+@media(min-width: 1200px) {
+  .project-block-image {
+    max-width: 16em;
+  }
+}
