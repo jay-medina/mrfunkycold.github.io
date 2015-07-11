@@ -1,0 +1,26 @@
+{
+  "name": "mrfunkycold.github.io",
+  "version": "0.0.0",
+  "authors": [
+    "Jose Medina <josemedina921@gmail.com>"
+  ],
+  "description": "Site to display portfolio",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://mrfunkycold.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marionette": "~2.4.2",
+    "mustache": "~2.1.2",
+    "bootstrap": "~3.3.5",
+    "text": "~2.0.14",
+    "requirejs": "~2.1.18"
+  }
+}

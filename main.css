@@ -1,6 +1,6 @@
 body {
-  background-color: #333;
-  color: #FFF;
+  background-color: #FFF;
+  color: #484848;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", "Times New Roman";
   font-size: 16px;
 }
@@ -11,10 +11,6 @@ body {
 
 .homepage_h1 {
   text-align: center;
-}
-
-.homepage_header-small {
-  font-style: italic;
 }
 
 .homepage_project-block {

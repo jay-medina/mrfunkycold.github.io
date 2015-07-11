@@ -1,0 +1,83 @@
+body {
+  background-color: #011315;
+  color: #FFF;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Light", "HelveticaNeue-Light", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", "Times New Roman";
+  font-size: 16px;
+}
+
+header {
+  padding-top: 2em;
+}
+
+footer {
+  text-align: right;
+  margin-top: 1em;
+  padding: 1em 0 8em;
+  border-top: 1px solid #E5E5E5;
+}
+
+.nav-pills > li > a {
+  padding: 0.5em;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", "Times New Roman";
+}
+
+.nav-pills > li.active > a {
+  background-color: #164B79;
+}
+
+.homepage_header-title {
+  text-align: center;
+  font-size: 3em;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", "Times New Roman";
+}
+
+.homepage_header-subtitle {
+  text-align: center;
+  position: relative;
+  top: -0.75em;
+}
+
+.homepage_navigation {
+  padding-bottom: 2em;
+}
+
+.homepage_dash {
+  display: none;
+  background-color: #D0D0D0;
+  margin-top: 1em;
+}
+
+.homepage_main {
+  text-align: center;
+  background-image: url("../images/working.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 56em;
+  opacity: 0.75;
+}
+
+.homepage_text {
+  font-size: 6em;
+  color: white;
+  position: relative;
+  top: -6em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .row {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  .homepage_dash {
+    display: block;
+  }
+
+  .homepage_header-subtitle {
+    top: -1.25em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
