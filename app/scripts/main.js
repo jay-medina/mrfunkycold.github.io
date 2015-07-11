@@ -13,7 +13,6 @@ require.config({
 define(function(require) {
   'use strict';
 
-  var $ = require('jquery');
   var $main = $('.homepage_main');
   var DURATION = 400;
 
