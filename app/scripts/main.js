@@ -1,6 +1,7 @@
 require.config({
+  enforceDefine: true,
   paths: {
-    'jquery': ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min', '../bower_components/jquery/dist/jquery'],
+    'jquery': ['https://code.jquery.com/jquery-2.1.4.min', '../bower_components/jquery/dist/jquery'],
     'backbone': ['../bower_components/backbone/backbone'],
     'underscore': ['../bower_components/underscore/underscore-min'],
     'text': ['../bower_components/text/text'],
@@ -13,6 +14,7 @@ require.config({
 define(function(require) {
   'use strict';
 
+  var $ = require('jquery');
   var $main = $('.homepage_main');
   var DURATION = 400;
 
