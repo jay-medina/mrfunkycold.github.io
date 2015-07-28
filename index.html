@@ -12,34 +12,48 @@
   <link rel="stylesheet" href="app/styles/main.css">
 </head>
 
-<body class="container-fluid">
+<body>
   <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <header class="container">
-    <h1 class="col-md-12 homepage_header-title">Jose Medina</h1>
-    <h3 class="col-md-12 homepage_header-subtitle">Front-end Developer</h3>
-    <section class="col-md-3 homepage_dash"></section>
-    <section class="col-md-6 homepage_navigation">
-      <ul class="nav nav-pills nav-justified">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Resume</a></li>
-        <li role="presentation"><a href="#">Projects</a></li>
-      </ul>
-    </section>
-    <section class="col-md-3 homepage_dash"></section>
-  </header>
-  <section class="row">
-    <div class="homepage_main">
+  <nav class="navbar navbar-inverse navbar-fixed-top my__nav-bar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Jose Manuel Medina</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+      </div>
+      <!--/.navbar-collapse -->
     </div>
-    <h3 class="col-md-12 homepage_text">Under Construction</h3>
+  </nav>
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <section class="main-container">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome</h1>
+        <p>This is my site to show case projects, my interests and any random thoughts that come to mind.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Under Construction</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        </div>
+      </div>
+    </div>
   </section>
-  <footer>
-    <p>Jose Medina 2015</p>
+  <footer class="container">
+    <hr>
+    <p class="text-right">&copy; Jose Manuel Medina 2015</p>
   </footer>
-  <!-- script data-main="app/scripts/main" src="app/bower_components/requirejs/require.js"></script -->
-  <script data-main="app/scripts/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.min.js"></script>
+  <script data-main="app/scripts/main" src="app/bower_components/requirejs/require.js"></script>
 </body>
 
 </html>
