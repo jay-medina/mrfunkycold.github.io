@@ -16,18 +16,25 @@ define(function(require) {
   'use strict';
 
   var Backbone = require('backbone');
+  var Mustache = require('mustache');
   var Marionette = require('marionette');
+  var MainLayout = require('views/MainLayout');
 
-  var MyApp = new Marionette.Application({
-    container: 'body'
+  Marionette.Renderer.render = function(template, data) {
+    return Mustache.render(template, data);
+  };
+
+  var myApp = new Marionette.Application();
+
+  myApp.rootView = new MainLayout({
+    el: 'body'
   });
 
-  MyApp.on('start', function() {
-    if (Backbone.history) {
-      Backbone.history.start();
-    }
+  myApp.on('start', function() {
+    Backbone.history.start();
+    myApp.rootView.render();
   });
 
-  MyApp.start();
+  myApp.start();
 
 });
