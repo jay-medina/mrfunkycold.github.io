@@ -1,9 +1,25 @@
 $mainSize: 16px;
 $mainColor: #2A445F;
+$secondaryColor: #1B2C3D;
+$navbarSelected: #E0E0E0;
 /* Overridding Bootstraps */
 
 .navbar-inverse .navbar-brand {
-  color: #E0E0E0;
+  color: $navbarSelected;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: $secondaryColor;
+  color: $navbarSelected;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: $navbarSelected;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: $navbarSelected;
+  background-color: $secondaryColor;
 }
 /* My Styles */
 
