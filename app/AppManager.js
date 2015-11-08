@@ -1,6 +1,7 @@
 define(function (require) {
   'use strict';
 
+  var Backbone = require('backbone');
   var Marionette = require('marionette');
   var Mustache = require('mustache');
   var MainLayout = require('main/views/MainLayout');
@@ -9,16 +10,23 @@ define(function (require) {
     return Mustache.render(template, data);
   };
 
-  var myApp = new Marionette.Application();
+  var AppManager = new Marionette.Application();
 
-  myApp.rootView = new MainLayout({
-    el: 'body'
+  AppManager.on('start', function(){
+    AppManager.rootView = new MainLayout({
+      el: 'body'
+    }).render();
+
+    AppManager.navigate = function(route, options) {
+      options = options || {};
+      Backbone.history.navigate(route, options);
+    };
+
+    AppManager.getCurrentRoute = function() {
+      return Backbone.history.fragment;
+    };
+    
   });
 
-  myApp.on('start', function() {
-    myApp.rootView.render();
-  });
-
-  return myApp;
-
+  return AppManager;
 });
