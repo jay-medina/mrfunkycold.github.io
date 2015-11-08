@@ -19,14 +19,14 @@ define(function(require) {
   var MainLayout = Marionette.LayoutView.extend({
     template: Templates.MainLayout,
     regions: {
-      navBar: '.my__nav-bar',
-      mainContainer: '.my__main-container',
-      footer: '.my__footer'
+      navBarRegion: '.my__nav-bar',
+      mainRegion: '.my__main-container',
+      footerRegion: '.my__footer'
     },
     onRender: function() {
-      this.navBar.show(new NavBar());
-      this.mainContainer.show(new MainContainer());
-      this.footer.show(new Footer());
+      this.navBarRegion.show(new NavBar());
+      this.mainRegion.show(new MainContainer());
+      this.footerRegion.show(new Footer());
     }
   });
 

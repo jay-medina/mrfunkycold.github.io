@@ -3,7 +3,7 @@ define(function (require) {
 
   var Backbone = require('backbone');
 
-  var MyView = Backbone.View.extend({
+  var WeatherMain = Backbone.View.extend({
     render: function() {
       this.$el.html('A different view');
 
@@ -11,5 +11,5 @@ define(function (require) {
     }
   });
 
-  return MyView;
+  return WeatherMain;
 });
