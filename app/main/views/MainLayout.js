@@ -7,7 +7,17 @@ define(function(require) {
 
   var NavBar = Marionette.ItemView.extend({
     className: 'container',
-    template: Templates.NavBar
+    template: Templates.NavBar,
+    selectItem: function(className){
+      this.$('.js-navbar li').removeClass('active');
+
+      if(className){
+        this.$('.js-navbar .js-'+className).addClass('active');
+      }
+      else {
+        this.$('.js-home').addClass('active');
+      }
+    }
   });
 
   var Footer = Marionette.ItemView.extend({
@@ -24,9 +34,15 @@ define(function(require) {
       footerRegion: '.my__footer'
     },
     onRender: function() {
-      this.navBarRegion.show(new NavBar());
+      this.showNavBar();
       this.mainRegion.show(new MainContainer());
       this.footerRegion.show(new Footer());
+    },
+    showNavBar: function() {
+      var navBar = new NavBar();
+
+      this.on('select:navBar', navBar.selectItem.bind(navBar));
+      this.navBarRegion.show(navBar);
     }
   });
 

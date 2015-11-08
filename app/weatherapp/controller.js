@@ -5,6 +5,7 @@ define(function (require) {
   var AppManager = require('AppManager');
 
   function show(){
+    AppManager.rootView.trigger('select:navBar', 'projects');
     AppManager.rootView.mainRegion.show(new MainView());
   }
 

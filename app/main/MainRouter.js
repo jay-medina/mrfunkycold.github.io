@@ -4,11 +4,13 @@ define(function (require) {
   var Backbone = require('backbone');
   var Marionette = require('marionette');
   var AppManager = require('AppManager');
+  var MainController = require('main/Controller');
   var WeatherController = require('weatherapp/controller');
 
   var AppRouter = Marionette.AppRouter.extend({
     appRoutes: {
-      'weatherlist' : 'weatherlist'
+      'weatherlist' : 'weatherlist',
+      'main': 'main'
     },
     routes: {
       '': 'defaultRoute'
@@ -16,16 +18,23 @@ define(function (require) {
     controller: {
       weatherlist: function(){
         AppManager.trigger('app:weatherlist');
+      },
+      main: function(){
+        AppManager.trigger('app:main');
       }
     },
     defaultRoute: function() {
-      AppManager.navigate('main');
+      AppManager.trigger('app:main');
     }
   });
 
   function configureController() {
     AppManager.on('app:weatherlist', function() {
       WeatherController.show();
+    });
+
+    AppManager.on('app:main', function() {
+      MainController.show();
     });
   }
 
