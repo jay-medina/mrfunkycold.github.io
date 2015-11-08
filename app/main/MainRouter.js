@@ -4,6 +4,7 @@ define(function (require) {
   var Backbone = require('backbone');
   var Marionette = require('marionette');
   var AppManager = require('AppManager');
+  var WeatherController = require('weatherapp/controller');
 
   var AppRouter = Marionette.AppRouter.extend({
     appRoutes: {
@@ -24,8 +25,7 @@ define(function (require) {
 
   function configureController() {
     AppManager.on('app:weatherlist', function() {
-      console.log('navigate to weatherlist');
-      console.log(AppManager.rootView.$el);
+      WeatherController.show();
     });
   }
 
