@@ -15,25 +15,7 @@ require.config({
 define(function(require) {
   'use strict';
 
-  var Backbone = require('backbone');
-  var Mustache = require('mustache');
-  var Marionette = require('marionette');
-  var MainLayout = require('views/MainLayout');
-
-  Marionette.Renderer.render = function(template, data) {
-    return Mustache.render(template, data);
-  };
-
-  var myApp = new Marionette.Application();
-
-  myApp.rootView = new MainLayout({
-    el: 'body'
-  });
-
-  myApp.on('start', function() {
-    Backbone.history.start();
-    myApp.rootView.render();
-  });
+  var myApp = require('AppManager');
 
   myApp.start();
 

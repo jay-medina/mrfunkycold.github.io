@@ -2,17 +2,12 @@ define(function(require) {
   'use strict';
 
   var Marionette = require('marionette');
-  var Templates = require('templates/Templates');
+  var MainContainer = require('main/views/MainContainer');
+  var Templates = require('main/templates/Templates');
 
   var NavBar = Marionette.ItemView.extend({
     className: 'container',
     template: Templates.NavBar
-  });
-
-  var MainContainer = Marionette.ItemView.extend({
-    tagName: 'section',
-    className: 'main-container',
-    template: Templates.MainContainer
   });
 
   var Footer = Marionette.ItemView.extend({
