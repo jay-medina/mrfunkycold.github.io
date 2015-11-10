@@ -16,8 +16,7 @@ define(function(require) {
   'use strict';
 
   var myApp = require('AppManager');
-  require('main/MainRouter');
-
+  require('RouteManager');
   myApp.start();
 
 });
