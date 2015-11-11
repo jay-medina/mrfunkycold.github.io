@@ -34,6 +34,21 @@ body {
   margin-bottom: 32px;
 }
 
+.weatherapp_inputform {
+  margin-bottom: 16px;
+}
+
+.weatherapp_list-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.weatherapp_list-item > * {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .weatherapp_ok-btn {
   color: #FFF;
   background-color: #5cb85c;

@@ -5,7 +5,6 @@ define(function (require) {
   var WeatherListItemView = require('weatherapp/views/WeatherListItemView');
 
   var WeatherListContainer = Backbone.View.extend({
-    className: 'container',
     render: function(){
       this.$el.html('');
       this.collection.each(this.renderWeatherItem.bind(this));
