@@ -17,7 +17,6 @@
   background-color: #1B2C3D;
 }
 
-/* My Styles */
 body {
   font-size: 16px;
 }
@@ -28,6 +27,16 @@ body {
 
 .my__main-container {
   margin-top: 48px;
+}
+
+.weatherapp_header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.weatherapp_ok-btn {
+  color: #FFF;
+  background-color: #5cb85c;
 }
 
 /*# sourceMappingURL=main.css.map */

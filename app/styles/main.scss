@@ -2,6 +2,7 @@ $mainSize: 16px;
 $mainColor: #2A445F;
 $secondaryColor: #1B2C3D;
 $navbarSelected: #E0E0E0;
+$successBtnColor: #5cb85c;
 /* Overridding Bootstraps */
 
 .navbar-inverse .navbar-brand {
@@ -21,7 +22,6 @@ $navbarSelected: #E0E0E0;
   color: $navbarSelected;
   background-color: $secondaryColor;
 }
-/* My Styles */
 
 body {
   font-size: $mainSize;
@@ -33,4 +33,14 @@ body {
 
 .my__main-container {
   margin-top: $mainSize * 3;
+}
+
+.weatherapp_header{
+  text-align: center;
+  margin-bottom: $mainSize * 2;
+}
+
+.weatherapp_ok-btn {
+  color: #FFF;
+  background-color: $successBtnColor;
 }
