@@ -11,7 +11,8 @@ define(function (require) {
     template: template,
     events: {
       'mouseover' : '_showRemoveBtn',
-      'mouseleave' : '_hideRemoveBtn'
+      'mouseleave' : '_hideRemoveBtn',
+      'click .js-remove': '_deleteListItem'
     },
     compileHtml: function() {
       return Mustache.render(this.template, this.getTemplateData());
@@ -28,6 +29,10 @@ define(function (require) {
     },
     _hideRemoveBtn: function () {
       this.$('.js-remove').removeClass('show');
+    },
+    _deleteListItem: function () {
+      this.model.destroy();
+      this.remove();
     }
 
   });

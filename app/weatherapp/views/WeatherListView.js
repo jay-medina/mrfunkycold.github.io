@@ -4,7 +4,10 @@ define(function (require) {
   var Backbone = require('backbone');
   var WeatherListItemView = require('weatherapp/views/WeatherListItemView');
 
-  var WeatherListContainer = Backbone.View.extend({
+  var WeatherListView = Backbone.View.extend({
+    initialize: function () {
+      this.listenTo(this.collection, 'add', this.render.bind(this));
+    },
     render: function(){
       this.$el.html('');
       this.collection.each(this.renderWeatherItem.bind(this));
@@ -19,5 +22,5 @@ define(function (require) {
   });
 
 
-  return WeatherListContainer;
+  return WeatherListView;
 });
