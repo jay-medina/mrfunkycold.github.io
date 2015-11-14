@@ -56,4 +56,17 @@ body {
   border: 1px solid white;
 }
 
+.weatherapp_temperature {
+  font-size: $mainSize * 3;
+  font-weight: 200;
+}
+
+.weatherapp_remove-btn {
+  display:none;
+}
+
+.weatherapp_remove-btn.show {
+  display:block;
+}
+
 

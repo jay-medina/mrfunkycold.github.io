@@ -9,6 +9,10 @@ define(function (require) {
   var WeatherListItemView = Backbone.View.extend({
     className: 'weatherapp_list-item col-sm-4',
     template: template,
+    events: {
+      'mouseover' : '_showRemoveBtn',
+      'mouseleave' : '_hideRemoveBtn'
+    },
     compileHtml: function() {
       return Mustache.render(this.template, this.getTemplateData());
     },
@@ -18,6 +22,12 @@ define(function (require) {
     render: function(){
       this.$el.html(this.compileHtml());
       return this;
+    },
+    _showRemoveBtn: function () {
+      this.$('.js-remove').addClass('show');
+    },
+    _hideRemoveBtn: function () {
+      this.$('.js-remove').removeClass('show');
     }
 
   });
