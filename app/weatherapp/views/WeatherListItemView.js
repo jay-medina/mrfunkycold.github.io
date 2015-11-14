@@ -7,7 +7,7 @@ define(function (require) {
   var template = require('text!weatherapp/templates/WeatherListItem.html');
 
   var WeatherListItemView = Backbone.View.extend({
-    className: 'row weatherapp_list-item',
+    className: 'weatherapp_list-item col-sm-4',
     template: template,
     compileHtml: function() {
       return Mustache.render(this.template, this.getTemplateData());
