@@ -63,4 +63,15 @@ body {
   display: block;
 }
 
+.weatherapp_remove-btn * {
+  padding: 5px;
+  padding-left: 4px;
+  top: -3px;
+}
+
+.weatherapp_remove-btn:hover * {
+  background-color: rgba(201, 16, 16, 0.7);
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=main.css.map */
