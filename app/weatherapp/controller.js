@@ -23,9 +23,15 @@ define(function (require) {
   };
 
   controller.showListItemByName = function(name) {
-    var item = list.findWhere({city: name});
+    var model = list.findWhere({city: name});
 
-    console.log(item);
+    if(model) {
+      this.showListItemByModel(model);
+    }
+    else {
+      AppManager.navigate('/weatherlist');
+      this.show();
+    }
   }
 
   controller.showListItemByModel = function(model) {

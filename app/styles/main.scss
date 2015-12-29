@@ -59,6 +59,11 @@ body {
 .weatherapp_temperature {
   font-size: $mainSize * 3;
   font-weight: 200;
+  vertical-align: top;
+}
+
+.weatherapp_temperature-icon {
+  width: $mainSize * 4;
 }
 
 .weatherapp_remove-btn {
