@@ -3,7 +3,6 @@ define(function (require) {
 
   var Backbone = require('backbone');
   var Mustache = require('mustache');
-
   var template = require('text!weatherapp/templates/WeatherListItem.html');
 
   var WeatherListItemView = Backbone.View.extend({
@@ -12,7 +11,8 @@ define(function (require) {
     events: {
       'mouseover' : '_showRemoveBtn',
       'mouseleave' : '_hideRemoveBtn',
-      'click .js-remove': '_deleteListItem'
+      'click .js-remove': '_deleteListItem',
+      'click' : '_goToWeatherItemPage'
     },
     compileHtml: function() {
       return Mustache.render(this.template, this.getTemplateData());
@@ -30,9 +30,14 @@ define(function (require) {
     _hideRemoveBtn: function () {
       this.$('.js-remove').removeClass('show');
     },
-    _deleteListItem: function () {
+    _deleteListItem: function (e) {
+      e.stopPropagation();
+
       this.model.destroy();
       this.remove();
+    },
+    _goToWeatherItemPage: function () {
+      this.trigger('display:weatherItem', this.model);
     }
 
   });

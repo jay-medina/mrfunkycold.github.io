@@ -2,6 +2,7 @@ define(function (require) {
   'use strict';
 
   var Backbone = require('backbone');
+  var AppManager = require('AppManager');
   var WeatherListItemView = require('weatherapp/views/WeatherListItemView');
 
   var WeatherListView = Backbone.View.extend({
@@ -16,9 +17,15 @@ define(function (require) {
       return this;
     },
     renderWeatherItem: function(weatherItem) {
-      this.$el.append(new WeatherListItemView({
+      var itemView = new WeatherListItemView({
         model: weatherItem
-      }).render().$el);
+      }).render();
+
+      itemView.on('display:weatherItem', function(model) {
+        AppManager.trigger('display:weatherItem', model);
+      });
+
+      this.$el.append(itemView.$el);
     }
   });
 
