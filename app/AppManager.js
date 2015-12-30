@@ -16,17 +16,17 @@ define(function (require) {
     AppManager.rootView = new MainLayout({
       el: 'body'
     }).render();
-
-    AppManager.navigate = function(route, options) {
-      options = options || {};
-      Backbone.history.navigate(route, options);
-    };
-
-    AppManager.getCurrentRoute = function() {
-      return Backbone.history.fragment;
-    };
     
   });
+
+  AppManager.navigate = function(route, options) {
+    options = options || {};
+    Backbone.history.navigate(route, options);
+  };
+
+  AppManager.getCurrentRoute = function() {
+    return Backbone.history.fragment;
+  };
 
   return AppManager;
 });
