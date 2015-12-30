@@ -8,7 +8,7 @@ define(function (require) {
   var WeatherListView = Backbone.View.extend({
     className: 'row',
     initialize: function () {
-      this.listenTo(this.collection, 'add', this.render.bind(this));
+      this.listenTo(this.collection, 'update', this.render.bind(this));
     },
     render: function(){
       this.$el.html('');
@@ -21,7 +21,7 @@ define(function (require) {
         model: weatherItem
       }).render();
 
-      itemView.on('display:weatherItem', function(model) {
+      this.listenTo(itemView, 'display:weatherItem', function(model){
         AppManager.trigger('display:weatherItem', model);
       });
 

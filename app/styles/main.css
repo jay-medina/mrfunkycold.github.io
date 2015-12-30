@@ -60,6 +60,10 @@ body {
   width: 64px;
 }
 
+.weatherapp_temperature-city {
+  padding-left: 32px;
+}
+
 .weatherapp_remove-btn {
   display: none;
 }

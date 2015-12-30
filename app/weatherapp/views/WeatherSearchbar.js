@@ -2,6 +2,7 @@ define(function (require) {
   'use strict';
 
   var Backbone = require('backbone');
+  var AppManager = require('AppManager');
   var template = require('text!weatherapp/templates/WeatherSearchbar.html');
 
   var ENTER_KEY = 13;
@@ -29,7 +30,7 @@ define(function (require) {
     saveInput: function() {
       var city = this.$cityInput.val();
 
-      this.collection.add({city: city, temperature: 75});
+      AppManager.trigger('weatherapp:addCity', city);
     }
   });
 

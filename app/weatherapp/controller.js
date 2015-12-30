@@ -8,18 +8,18 @@ define(function (require) {
   var WeatherList = require('weatherapp/entities/WeatherList');
   var controller = {};
 
-  var list = new WeatherList.get();
+  var collection = WeatherList.get();
 
   controller.show = function(){
 
     AppManager.rootView.trigger('select:navBar', 'projects');
     AppManager.rootView.mainRegion.show(new MainView({
-      collection: list
+      collection: collection
     }));
   };
 
   controller.showListItemByName = function(name) {
-    var model = list.findWhere({city: name});
+    var model = collection.findWhere({city: name});
 
     if(model) {
       this.showListItemByModel(model);
@@ -35,6 +35,10 @@ define(function (require) {
       model: model
     }));
   };
+
+  AppManager.on('weatherapp:addCity', function(city) {
+    collection.add({name: city});
+  });
 
   return controller;
 

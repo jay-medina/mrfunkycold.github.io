@@ -14,11 +14,20 @@ define(function (require) {
       'click .js-remove': '_deleteListItem',
       'click' : '_goToWeatherItemPage'
     },
+    initialize: function(){
+      this.listenTo(this.model, 'change', this.render.bind(this));
+    },
     compileHtml: function() {
       return Mustache.render(this.template, this.getTemplateData());
     },
     getTemplateData: function() {
-      return this.model.toJSON();
+      var main = this.model.get('main');
+      var temp = main? main.temp : '';
+
+      return {
+        city: this.model.get('name'),
+        temperature: temp
+      };
     },
     render: function(){
       this.$el.html(this.compileHtml());
@@ -33,8 +42,8 @@ define(function (require) {
     _deleteListItem: function (e) {
       e.stopPropagation();
 
+      this.model.clear();
       this.model.destroy();
-      this.remove();
     },
     _goToWeatherItemPage: function () {
       this.trigger('display:weatherItem', this.model);

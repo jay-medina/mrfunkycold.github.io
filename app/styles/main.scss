@@ -66,6 +66,10 @@ body {
   width: $mainSize * 4;
 }
 
+.weatherapp_temperature-city {
+  padding-left: $mainSize * 2;
+}
+
 .weatherapp_remove-btn {
   display:none;
 }

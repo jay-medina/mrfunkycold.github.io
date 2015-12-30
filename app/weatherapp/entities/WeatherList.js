@@ -4,6 +4,7 @@ define(function (require) {
   var Backbone = require('backbone');
   var LocalStorage = require('weatherapp/entities/LocalStorage');
   var WeatherModel = require('weatherapp/entities/WeatherModel');
+  var WeatherAPI = require('weatherapp/entities/WeatherAPI');
 
   var keyName = 'WEATHERLIST';
 
@@ -19,7 +20,10 @@ define(function (require) {
     LocalStorage.set(keyName, stringified);
   }
 
-  weatherList.on('add', setCollectionToLocalStorage);
+  weatherList.on('add', function(model){
+    WeatherAPI.fetchLocation(model).then(setCollectionToLocalStorage);
+  });
+  
   weatherList.on('remove', setCollectionToLocalStorage);
 
   return {

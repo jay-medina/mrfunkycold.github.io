@@ -12,7 +12,10 @@ define(function(require){
       return Mustache.render(this.template, this.getTemplateData());
     },
     getTemplateData: function() {
-      return this.model.toJSON();
+      return {
+        city: this.model.get('name'),
+        temperature: this.model.get('main').temp
+      };
     },
     render: function() {
       this.$el.html(this.compileHtml());

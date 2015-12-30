@@ -5,7 +5,7 @@ define(function (require) {
 
   var WeatherModel = Backbone.Model.extend({
     defaults: {
-      city: '',
+      name: '',
       temperature: ''
     }
   });

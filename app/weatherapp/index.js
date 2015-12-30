@@ -18,9 +18,7 @@ define(function (require) {
       return this;
     },
     renderSearchbar: function () {
-      var searchbar = new WeatherSearchbar({
-        collection: this.collection
-      }).render();
+      var searchbar = new WeatherSearchbar().render();
 
       this.$('.weatherapp_searchbar').html(searchbar.$el);
     },
