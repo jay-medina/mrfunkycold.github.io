@@ -28,7 +28,7 @@ define(function (require) {
   });
 
   AppManager.on('display:weatherItem', function(model) {
-    AppManager.navigate('weatherlist/' + model.get('city'));  
+    AppManager.navigate('weatherlist/' + model.get('name'));  
     WeatherController.showListItemByModel(model);
   })
 
