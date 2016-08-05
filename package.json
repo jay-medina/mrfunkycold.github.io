@@ -4,7 +4,8 @@
   "description": "portfolio page ",
   "main": "index.html",
   "scripts": {
-    "start": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,8 @@
   "devDependencies": {
     "html-webpack-plugin": "^2.22.0",
     "webpack": "^1.13.1",
-    "webpack-merge": "^0.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.1",
+    "webpack-validator": "^2.2.7"
   }
 }
