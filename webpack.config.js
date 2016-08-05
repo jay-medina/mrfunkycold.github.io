@@ -6,7 +6,9 @@ const PATHS = {
   build: path.join(__dirname, 'build')
 }
 
-module.exports = {
+const merge = require('webpack-merge');
+
+const commonConfig = {
   // Entry accepts a path or an object of entries.
   // We'll be using the latter form given it's
   // convenient with more complex configurations.
@@ -23,3 +25,14 @@ module.exports = {
     })
   ]
 };
+
+var config;
+
+switch(process.env.npm_lifecycle_event) {
+  case 'build':
+    config = merge(common, {}); break;
+  default:
+    config = merge(common, {});
+}
+
+module.exports = config;
