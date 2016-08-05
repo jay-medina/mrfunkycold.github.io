@@ -23,5 +23,10 @@ Page to list projects
   <dt><h3>Webpack Validator</h3></dt>
   <dd>Determines if there is an issue with webpack config.</dd>
   <dd>Config: <a href="https://github.com/js-dxtools/webpack-validator">Webpack Validator</a></dd>
+
+  <dt><h3>Styles and CSS Loader</h3></dt>
+  <dd>Allows CSS files to loaded using webpack.</dd>
+  <dd>Config for Style Loader: <a href="https://github.com/webpack/style-loader">Style Loader</a></dd>
+  <dd>Config for CSS Loader: <a href="https://github.com/webpack/css-loader">CSS Loader</a></dd>
 </dl>
 

@@ -15,9 +15,6 @@ const validate = require('webpack-validator');
 const parts = require('./libs/parts');
 
 const commonConfig = {
-  // Entry accepts a path or an object of entries.
-  // We'll be using the latter form given it's
-  // convenient with more complex configurations.
   entry: {
     app: PATHS.app
   },
@@ -36,14 +33,18 @@ var config;
 
 switch(process.env.npm_lifecycle_event) {
   case 'build':
-    config = merge(commonConfig, {}); break;
+    config = merge(
+      commonConfig, 
+      parts.setupCSS(PATHS.app)); break;
+
   default:
     config = merge(
       commonConfig, 
       parts.devServer({
         host: process.env.HOST,
         port: process.env.PORT
-      })
+      }),
+      parts.setupCSS(PATHS.app)
     );
 }
 
