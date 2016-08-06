@@ -1,34 +1,16 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const common = require('./libs/common');
+const merge = require('webpack-merge');
+const validate = require('webpack-validator'); 
+const parts = require('./libs/parts');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build')
-}
-
-//merges properties together
-const merge = require('webpack-merge');
-
-// checks to ensure that config is correct
-const validate = require('webpack-validator'); 
-
-const parts = require('./libs/parts');
-
-const commonConfig = {
-  entry: {
-    app: PATHS.app
-  },
-  devtool: 'source-map',
-  output: {
-    path: PATHS.build,
-    filename: '[name].js'
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Webpack demo'
-    })
-  ]
 };
+
+const commonConfig = common.config(PATHS);
+
 
 var config;
 
@@ -40,6 +22,10 @@ switch(process.env.npm_lifecycle_event) {
         'process.env.NODE_ENV',
         'production'
       ),
+      parts.extractBundle({
+        name: 'vendor',
+        entries: ['react']
+      }),
       parts.minify(),
       parts.setupCSS(PATHS.app)); 
     
