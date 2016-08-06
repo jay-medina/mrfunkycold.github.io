@@ -1,4 +1,5 @@
 var component = require('./component.js');
+require('react');
 
 require('./main.css');
 

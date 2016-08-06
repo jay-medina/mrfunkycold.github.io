@@ -18,6 +18,7 @@ const commonConfig = {
   entry: {
     app: PATHS.app
   },
+  devtool: 'source-map',
   output: {
     path: PATHS.build,
     filename: '[name].js'
