@@ -35,8 +35,11 @@ var config;
 switch(process.env.npm_lifecycle_event) {
   case 'build':
     config = merge(
-      commonConfig, 
-      parts.setupCSS(PATHS.app)); break;
+      commonConfig,
+      parts.minify(),
+      parts.setupCSS(PATHS.app)); 
+    
+    break;
 
   default:
     config = merge(
