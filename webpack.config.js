@@ -11,7 +11,6 @@ const PATHS = {
 
 const commonConfig = common.config(PATHS);
 
-
 var config;
 
 switch(process.env.npm_lifecycle_event) {

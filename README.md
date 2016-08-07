@@ -2,7 +2,7 @@
 
 Page to list projects
 
-### Bundler Dependencies and descriptions 
+## Bundler Dependencies and descriptions 
 
 <p>
 <h3>Webpack</h3>
@@ -14,6 +14,31 @@ Website: <a href="http://webpack.github.io/">Webpack</a>
 <h3>Webpack Dev Server</h3>
 Creates a local server <br/>
 Config: <a href="http://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli">webpack-dev-server</a>
+</p>
+
+<p>
+<h3>Hot Module Replacement Plugin</h3>
+Swaps out modified modules without having to do a full refresh <br/>
+Config: <a href="http://webpack.github.io/docs/hot-module-replacement-with-webpack.html">Hot Module Replacement</a>
+</p>
+
+<p>
+<h3>UglifyJS Plugin</h3>
+Minifies Javascript <br/>
+Config: <a href="https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin">UglifyJS Plugin</a>
+</p>
+
+<p>
+<h3>Chunk hashes</h3>
+Add chunk hashes to file names<br/>
+Part of webpack. Set the filename to be <code>[name].[chunkhash].js </code>
+</p>
+
+
+<p>
+<h3>Commons Chunk Plugin</h3>
+Extracts bundles of files (i.e. application, vendor bundles)<br/>
+Config: <a href="https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin">Commons Chunk Plugin</a>
 </p>
   
 <h3>HTML webpack plugin</h3>
@@ -41,4 +66,9 @@ Config for Style Loader: <a href="https://github.com/webpack/style-loader">Style
 Config for CSS Loader: <a href="https://github.com/webpack/css-loader">CSS Loader</a> <br/>
 </p>
 
+<p>
+<h3>Clean webpack plugin</h3>
+Removes build directory before rebuilding project <br/>
+Config for Plugin: <a href="https://github.com/johnagan/clean-webpack-plugin">Clean Webpack</a> <br/>
+</p>
 
