@@ -72,3 +72,9 @@ Removes build directory before rebuilding project <br/>
 Config for Plugin: <a href="https://github.com/johnagan/clean-webpack-plugin">Clean Webpack</a> <br/>
 </p>
 
+<p>
+<h3>Extract Text Plugin</h3>
+Separates out css from javascript bundles <br/>
+Config for Plugin: <a href="https://github.com/webpack/extract-text-webpack-plugin">Extract Text Plugin</a> <br/>
+</p>
+
