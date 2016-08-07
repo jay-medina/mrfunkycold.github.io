@@ -18,6 +18,12 @@ switch(process.env.npm_lifecycle_event) {
   case 'build':
     config = merge(
       commonConfig,
+      {
+        output: {
+          path: PATHS.build,
+          filename: '[name].[chunkhash].js'
+        }
+      },
       parts.setFreeVariable(
         'process.env.NODE_ENV',
         'production'
