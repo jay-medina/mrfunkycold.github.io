@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 exports.config = function(PATHS) {
   return {
     entry: {
+      style: PATHS.style,
       app: PATHS.app
     },
     devtool: 'source-map',
