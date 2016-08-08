@@ -78,3 +78,9 @@ Separates out css from javascript bundles <br/>
 Config for Plugin: <a href="https://github.com/webpack/extract-text-webpack-plugin">Extract Text Plugin</a> <br/>
 </p>
 
+<p>
+<h3>Todo: </h3>
+<ul>
+<li>http://survivejs.com/webpack/building-with-webpack/hosting-on-github-pages/</li>
+</ul>
+</p>
