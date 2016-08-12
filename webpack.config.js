@@ -21,7 +21,7 @@ switch(process.env.npm_lifecycle_event) {
       {
         output: {
           path: PATHS.build,
-          filename: '[name].[chunkhash].js'
+          filename: '[name].js'
         }
       },
       parts.clean(PATHS.build),
@@ -31,7 +31,7 @@ switch(process.env.npm_lifecycle_event) {
       ),
       parts.extractBundle({
         name: 'vendor',
-        entries: ['react']
+        entries: ['react', 'react-dom']
       }),
       parts.minify(),
       parts.extractCSS(PATHS.style)
