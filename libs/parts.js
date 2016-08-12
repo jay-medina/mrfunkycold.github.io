@@ -42,33 +42,13 @@ exports.extractCSS = function(PATHS) {
         // Extract CSS during build
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css'),
-          exclude: PATHS.vendor
+          loader: ExtractTextPlugin.extract('style', 'css')
         }
       ]
     },
     plugins: [
       // Output extracted CSS to a file
-      new ExtractTextPlugin('app.css')
-    ]
-  };
-}
-
-exports.extractVendorCSS = function(PATHS) {
-  return {
-    module: {
-      loaders: [
-        // Extract CSS during build
-        {
-          test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css'),
-          exclude: PATHS.app
-        }
-      ]
-    },
-    plugins: [
-      // Output extracted CSS to a file
-      new ExtractTextPlugin('vendor.css')
+      new ExtractTextPlugin('[name].css')
     ]
   };
 }
