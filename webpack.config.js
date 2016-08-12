@@ -6,7 +6,6 @@ const parts = require('./libs/parts');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  style: path.join(__dirname, 'app', 'main.css'),
   build: path.join(__dirname, 'build')
 };
 
@@ -21,7 +20,7 @@ switch(process.env.npm_lifecycle_event) {
       {
         output: {
           path: PATHS.build,
-          filename: '[name].[chunkhash].js'
+          filename: '[name].js'
         }
       },
       parts.clean(PATHS.build),
@@ -29,24 +28,31 @@ switch(process.env.npm_lifecycle_event) {
         'process.env.NODE_ENV',
         'production'
       ),
+      parts.loadingFontsAndImages(),
       parts.extractBundle({
         name: 'vendor',
-        entries: ['react']
+        entries: ['react', 'react-dom']
       }),
       parts.minify(),
-      parts.extractCSS(PATHS.style)
+      parts.extractCSS(PATHS)
     ); 
     
     break;
 
   default:
     config = merge(
-      commonConfig, 
+      commonConfig,
+      parts.makeGlobalVariable({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      }), 
+      parts.loadingFontsAndImages(),
       parts.devServer({
         host: process.env.HOST,
         port: process.env.PORT
       }),
-      parts.setupCSS(PATHS.style)
+      parts.setupCSS()
     );
 }
 
