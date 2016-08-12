@@ -22,21 +22,20 @@ exports.devServer = function(options) {
   }
 }
 
-exports.setupCSS = function(paths) {
+exports.setupCSS = function() {
   return {
     module: {
       loaders: [
         {
           test: /\.css$/,
-          loaders: ['style', 'css'],
-          include: paths
+          loaders: ['style', 'css']
         }
       ]
     }
   }
 }
 
-exports.extractCSS = function(paths) {
+exports.extractCSS = function(PATHS) {
   return {
     module: {
       loaders: [
@@ -44,13 +43,32 @@ exports.extractCSS = function(paths) {
         {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract('style', 'css'),
-          include: paths
+          exclude: PATHS.vendor
         }
       ]
     },
     plugins: [
       // Output extracted CSS to a file
-      new ExtractTextPlugin('[name].css')
+      new ExtractTextPlugin('app.css')
+    ]
+  };
+}
+
+exports.extractVendorCSS = function(PATHS) {
+  return {
+    module: {
+      loaders: [
+        // Extract CSS during build
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract('style', 'css'),
+          exclude: PATHS.app
+        }
+      ]
+    },
+    plugins: [
+      // Output extracted CSS to a file
+      new ExtractTextPlugin('vendor.css')
     ]
   };
 }
@@ -107,3 +125,26 @@ exports.clean = function(path) {
     ]
   }
 }
+
+exports.makeGlobalVariable = function(mappings) {
+  return {
+    plugins: [
+      new webpack.ProvidePlugin(mappings)
+    ]
+  }
+}
+
+exports.loadingFontsAndImages = function() {
+  return {
+      module: {
+        loaders: [
+          // the url-loader uses DataUrls.
+          // the file-loader emits files.
+          {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'},
+          {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
+          {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
+          {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
+        ]
+    }
+  };
+};

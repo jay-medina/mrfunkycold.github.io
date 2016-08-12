@@ -7,7 +7,11 @@ exports.config = function(PATHS) {
     entry: {
       app: path.join(PATHS.app, 'index.tsx')
     },
-    devtool: 'source-map',
+    resolve: {
+      modulesDirectories: [
+        'node_modules'
+      ]
+    },
     output: {
       path: PATHS.build,
       filename: '[name].js'
