@@ -1,24 +1,22 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Jumbotron, Container } from './bootstrap/components.tsx';
+import * as Setup from './setup.ts';
 import './main.css';
 
-class Hello extends React.Component<any,any>{
-  render() {
-    return <h1 className="container">Hello World</h1>
-  }
+function App() {
+  return (
+    <div>
+      <Jumbotron>
+        <Container>
+          <h1>Hello World</h1>
+        </Container>
+      </Jumbotron>
+      <Container>This is a container</Container>
+    </div>
+  );
 }
-
-function attachInitialReactEl() {
-  var body = document.getElementsByTagName('body')[0];
-  const reactEl = document.createElement('div');
-
-  body.appendChild(reactEl);
-
-  return reactEl;
-}
-
 ReactDOM.render(
-  <Hello />,
-  attachInitialReactEl()
+  <App />,
+  Setup.attachInitialReactEl()
 )
