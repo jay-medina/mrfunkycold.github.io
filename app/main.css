@@ -1,4 +1,56 @@
-.jumbotron {
-  background: #525564;
+/**
+  dark-grey: #525564
+  grey: #74828F
+  lightblue: #96C0CE
+  beige: #BEB9B5
+  offred: #C25B56
+  cream: #FEF6EB
+*/
+
+body {
+  font-size: 14px;
+}
+.jumbotron, 
+.navbar-default, 
+.navbar-header {
+  background: #33363b;
+  color: #FFF;
+}
+
+.navbar-default {
+  border-color: #33363b;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-text,
+.navbar-default .navbar-nav>li>a {
+  color: #FFF;
+  font-size: 16px;
+  transition: color 1s;
+}
+.navbar-default .navbar-brand .subtitle {
+  display: inline-block;
+  margin: 0 10px;
+}
+.navbar-default .navbar-brand .subtitle,
+.navbar-default .navbar-nav>li>a {
+  font-weight: 100;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-brand:focus, 
+.navbar-default .navbar-brand:hover {
+  color: #96C0CE;
+  cursor: pointer;
+}
+
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-brand:focus {
   color: #FFF;
 }

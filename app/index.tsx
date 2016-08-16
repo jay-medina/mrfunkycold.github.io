@@ -1,13 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Jumbotron, Container } from './bootstrap/components.tsx';
+import { Jumbotron, Container, Navbar} from './bootstrap/components.tsx';
 import * as Setup from './setup.ts';
 import './main.css';
 
 function App() {
   return (
     <div>
-      <Jumbotron>
+      <Navbar title={"Jose Manuel Medina"} subtitle={"Front end developer"}/>
+      <Jumbotron>  
         <Container>
           <h1>Hello World</h1>
         </Container>
